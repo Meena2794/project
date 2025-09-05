@@ -1,0 +1,30 @@
+{	
+	"request":{
+	"method":"POST",
+	"url":"/debitCard",
+	"bodyPatterns":[
+	{
+	"matchesJsonPath":"$.[?(@.debitCardNum =='1234567887654321')]"
+	},
+	{
+	"matchesJsonPath":"$.[?(@.cvv =='543')]"
+	},
+	{
+	"matchesJsonPath":"$.[?(@.expDate =='28/30')]"
+	}	
+	],
+"headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  
+	},
+	"response":{
+		"status":200,
+		"body":"{\"status\":\"successful\"}",
+"headers": {
+      "Content-Type": "application/json"
+    }
+	}
+}
